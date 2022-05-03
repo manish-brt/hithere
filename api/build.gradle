@@ -1,0 +1,29 @@
+plugins {
+    id 'java-library'
+    id 'org.jetbrains.kotlin.jvm'
+    id 'kotlin'
+    id 'kotlin-kapt'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+dependencies {
+    api 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
+
+    //JSON to Kotlin Conversion
+    implementation "com.squareup.moshi:moshi:1.13.0"
+    //Does it at compile time -faster
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:1.13.0"
+    implementation "com.squareup.okhttp3:okhttp:4.9.3"
+
+    //test
+    testImplementation 'junit:junit:4.13.2'
+
+    //Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1"
+
+}
